@@ -1,0 +1,148 @@
+\section{Asymmetries and Flavour Tagging}
+
+After calculating the decay rates as we expect them without any experimental effects we can now start to introduce these effects
+(from here on the HFLAV convention presented in \cref{sec:HFLAVconv} will be used). First we will start with a simple production
+asymmetry $\alpha$ between \Bz and \Bzb. If $\alpha$ is positive there are more \Bzb produced than \Bz:
+\begin{align*}
+  \Gamma\left(\Bz\to f\right) &\propto e^{-\Gamma t}\left(1-\alpha\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +D\sinh\left(\frac{\Delta\Gamma}{2}t\right)+C\cos\left(\Delta mt\right)-S\sin\left(\Delta mt\right)\right]\\
+  \Gamma\left(\Bz\to \overline{f}\right) &\propto e^{-\Gamma t}\left(1-\alpha\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +\overline{D}\sinh\left(\frac{\Delta\Gamma}{2}t\right)+\overline{C}\cos\left(\Delta mt\right)-\overline{S}\sin\left(\Delta mt\right)\right]\\
+  \Gamma\left(\Bzb\to \overline{f}\right) &\propto e^{-\Gamma t}\left(1+\alpha\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +\overline{D}\sinh\left(\frac{\Delta\Gamma}{2}t\right)-\overline{C}\cos\left(\Delta mt\right)+\overline{S}\sin\left(\Delta mt\right)\right]\\
+  \Gamma\left(\Bzb\to f\right) &\propto e^{-\Gamma t}\left(1+\alpha\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +D\sinh\left(\frac{\Delta\Gamma}{2}t\right)-C\cos\left(\Delta mt\right)+S\sin\left(\Delta mt\right)\right].
+\end{align*}
+The detection asymmetry $\beta$ between $f$ and $\overline{f}$ is introduced in the same way. If the detection efficiency for the finalstate $f$
+is better than for the conjugated finalstate $\overline{f}$ the detection asymmetry $\beta$ is positive:
+\begin{align}
+  \Gamma\left(\Bz\to f\right) &\propto e^{-\Gamma t}\left(1-\alpha\right)\left(1+\beta\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +D\sinh\left(\frac{\Delta\Gamma}{2}t\right)+C\cos\left(\Delta mt\right)-S\sin\left(\Delta mt\right)\right]\label{eq:asymmetries_one}\\
+  \Gamma\left(\Bz\to \overline{f}\right) &\propto e^{-\Gamma t}\left(1-\alpha\right)\left(1-\beta\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +\overline{D}\sinh\left(\frac{\Delta\Gamma}{2}t\right)+\overline{C}\cos\left(\Delta mt\right)-\overline{S}\sin\left(\Delta mt\right)\right]
+  \label{eq:asymmetries_two}\\
+  \Gamma\left(\Bzb\to \overline{f}\right) &\propto e^{-\Gamma t}\left(1+\alpha\right)\left(1-\beta\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +\overline{D}\sinh\left(\frac{\Delta\Gamma}{2}t\right)-\overline{C}\cos\left(\Delta mt\right)+\overline{S}\sin\left(\Delta mt\right)\right]
+  \label{eq:asymmetries_three}\\
+  \Gamma\left(\Bzb\to f\right) &\propto e^{-\Gamma t}\left(1+\alpha\right)\left(1+\beta\right)\left[\cosh\left(\frac{\Delta\Gamma}{2}t\right)
+  +D\sinh\left(\frac{\Delta\Gamma}{2}t\right)-C\cos\left(\Delta mt\right)+S\sin\left(\Delta mt\right)\right]\label{eq:asymmetries_four}.
+\end{align}
+When introducing the Flavour Tagging one cannot longer just look at the single decay rates for specific decays but to \enquote{mix} these
+rates to take into account the possibility of wrongly tagged candidates. Therefore we define now the two probabilities for the different
+initial states:
+\begin{align*}
+P(t,\Bz,f)\propto e^{-\Gamma t}
+\Bigg[\delta_{f,1}
+\Bigg(\left(1-\alpha\right)\left(1+\beta\right) &\Bigg(\cosh\left(\frac{\DG}{2}t\right)+D\sinh\left(\frac{\DG}{2}t\right)\\
+&+C\cos\left(\dm t\right)-S\sin\left(\dm t\right)\Bigg)\Bigg)\\
++\delta_{f,-1}\Bigg(\left(1-\alpha\right)\left(1-\beta\right) &\Bigg(\cosh\left(\frac{\DG}{2}t\right)+\overline{D}\sinh\left(\frac{\DG}{2}t\right)\\
+&+\overline{C}\cos\left(\dm t\right)-\overline{S}\sin\left(\dm t\right)\Bigg)\Bigg)\Bigg]\\
+P(t,\Bzb,f)\propto e^{-\Gamma t}
+\Bigg[\delta_{f,1}
+\Bigg(\left(1+\alpha\right)\left(1+\beta\right) &\Bigg(\cosh\left(\frac{\DG}{2}t\right)+D\sinh\left(\frac{\DG}{2}t\right)\\
+&-C\cos\left(\dm t\right)+S\sin\left(\dm t\right)\Bigg)\Bigg)\\
++\delta_{f,-1}\Bigg(\left(1+\alpha\right)\left(1-\beta\right) &\Bigg(\cosh\left(\frac{\DG}{2}t\right)+\overline{D}\sinh\left(\frac{\DG}{2}t\right)\\
+&-\overline{C}\cos\left(\dm t\right)+\overline{S}\sin\left(\dm t\right)\Bigg)\Bigg)\Bigg]
+\end{align*}
+Next we can connect the tags $d$ with the true initial state $d'$ by introducing the probabilities $P(d|d')$ for observing a specific tag $d$ given a true
+flavour $d'$. Done this we put all equations together by using some Kronecker $\delta$'s:
+\begin{align}
+P(t,d,f) =& \sum_{d'=-1,+1} P(d|d')P(t,d',f)\nonumber\\
+=& P(d|\Bz)P(t,\Bz,f) + P(d|\Bzb)P(t,\Bzb,f)\nonumber\\
+=&\left[\varepsilon_\text{tag}\left(\delta_{d,1}\left(1-\omega\right)+\delta_{d,-1}\omega\right)
+  +\delta_{d,0}\left(1-\varepsilon_\text{tag}\right)\right]P(t,\Bz,f)\nonumber\\
+&+\left[\overline{\varepsilon}_\text{tag}\left(\delta_{d,-1}\left(1-\overline{\omega}\right)+\delta_{d,1}\overline{\omega}\right)
+  +\delta_{d,0}\left(1-\overline{\varepsilon}_\text{tag}\right)\right]P(t,\Bzb,f)\label{eq:oneTagger_eff}
+\end{align}
+Here we define the tagging efficiencies as
+\begin{align*}
+\varepsilon_\text{tag} = \tilde{\varepsilon}_\text{tag}-\frac{\Delta\varepsilon_\text{tag}}{2}\\
+\overline{\varepsilon}_\text{tag} = \tilde{\varepsilon}_\text{tag}+\frac{\Delta\varepsilon_\text{tag}}{2}
+\end{align*}
+with an average tagging efficiency $\tilde{\varepsilon}_\text{tag}=\tfrac{\overline{\varepsilon}_\text{tag}+\varepsilon_\text{tag}}{2}$
+and a tagging efficiency asymmetry $\Delta\varepsilon_\text{tag}=\overline{\varepsilon}_\text{tag}-\varepsilon_\text{tag}$.
+Taking this into account we start now ordering \cref{eq:oneTagger_eff} with the Kronecker $\delta$'s:
+\begin{align}
+P(t,d,f) =& \delta_{d,1}\left[\varepsilon_\text{tag}\left(1-\omega\right)P(t,\Bz,f)
+  + \overline{\varepsilon}_\text{tag}\overline{\omega}P(t,\Bzb,f)\right]\nonumber\\
++&\delta_{d,-1}\left[\varepsilon_\text{tag}\omega P(t,\Bz,f) + \overline{\varepsilon}_\text{tag}\left(1-\overline{\omega}\right)P(t,\Bzb,f)\right]\nonumber\\
++&\delta_{d,0}\left[\left(1-\varepsilon_\text{tag}\right) P(t,\Bz,f) + \left(1-\overline{\varepsilon}_\text{tag}\right)P(t,\Bzb,f)\right]\nonumber\\
+=& \delta_{d,1}\Big[\varepsilon_\text{tag}\left(1-\omega\right)\left(\delta_{f,1}P(t,\Bz,+1) + \delta_{f,-1}P(t,\Bz,-1)\right)\nonumber\\
+&+\overline{\varepsilon}_\text{tag}\overline{\omega}\left(\delta_{f,1}P(t,\Bzb,+1) + \delta_{f,-1}P(t,\Bzb,-1)\right)\Big]e^{-\Gamma t}\nonumber\\
++&\delta_{d,-1}\Big[\varepsilon_\text{tag}\omega\left(\delta_{f,1}P(t,\Bz,+1) + \delta_{f,-1}P(t,\Bz,-1)\right)\nonumber\\
+&+\overline{\varepsilon}_\text{tag}\left(1-\overline{\omega}\right)\left(\delta_{f,1}P(t,\Bzb,+1)
+  + \delta_{f,-1}P(t,\Bzb,-1)\right)\Big]e^{-\Gamma t}\nonumber\\
++&\delta_{d,0}\Big[\left(1-\varepsilon_\text{tag}\right)\left(\delta_{f,1}P(t,\Bz,+1) + \delta_{f,-1}P(t,\Bz,-1)\right)\nonumber\\
+&+\left(1-\overline{\varepsilon}_\text{tag}\right)\left(\delta_{f,1}P(t,\Bzb,+1) + \delta_{f,-1}P(t,\Bzb,-1)\right)\Big]e^{-\Gamma t}\nonumber\\
+=&\delta_{d,1}\delta_{f,1}\left[\varepsilon_\text{tag}\left(1-\omega\right)P(t,\Bz,+1)
+  + \overline{\varepsilon}_\text{tag}\overline{\omega}P(t,\Bzb,+1)\right]e^{-\Gamma t}\label{eq:oneTagger_one}\\
++&\delta_{d,1}\delta_{f,-1}\left[\varepsilon_\text{tag}\left(1-\omega\right)P(t,\Bz,-1)
+  + \overline{\varepsilon}_\text{tag}\overline{\omega}P(t,\Bzb,-1)\right]e^{-\Gamma t}\label{eq:oneTagger_two}\\
++&\delta_{d,-1}\delta_{f,1}\left[\varepsilon_\text{tag}\omega P(t,\Bz,+1)
+  + \overline{\varepsilon}_\text{tag}\left(1-\overline{\omega}\right)P(t,\Bzb,+1)\right]e^{-\Gamma t}\label{eq:oneTagger_three}\\
++&\delta_{d,-1}\delta_{f,-1}\left[\varepsilon_\text{tag}\omega P(t,\Bz,-1)
+  + \overline{\varepsilon}_\text{tag}\left(1-\overline{\omega}\right)P(t,\Bzb,-1)\right]e^{-\Gamma t}\label{eq:oneTagger_four}\\
++&\delta_{d,0}\delta_{f,1}\left[\left(1-\varepsilon_\text{tag}\right) P(t,\Bz,+1)
+  + \left(1-\overline{\varepsilon}_\text{tag}\right)P(t,\Bzb,+1)\right]e^{-\Gamma t}\label{eq:oneTagger_five}\\
++&\delta_{d,0}\delta_{f,-1}\left[\left(1-\varepsilon_\text{tag}\right) P(t,\Bz,-1)
+  + \left(1-\overline{\varepsilon}_\text{tag}\right)P(t,\Bzb,-1)\right]e^{-\Gamma t}\label{eq:oneTagger_six}
+\end{align}
+So finally we get the coefficients for the $\sinh$-, $\cosh$-, $\sin$- and $\cos$-terms for the six possible combinations of tag and finalstate
+when calculate the expressions in \cref{eq:oneTagger_one,eq:oneTagger_two,eq:oneTagger_three,eq:oneTagger_four,eq:oneTagger_five,eq:oneTagger_six}.
+As the $cosh$- and $sinh$-terms only differ by the coefficients $D$ and $\overline{D}$ we calculate them together. Similarly, the $\cos$ and
+$\sin$-terms only differ by their coefficients a global sign (the $\sin$-coefficients have to be multiplicated by $1$), so they're also calculated together. For the tagged candidates with finalstate $f=+1$ (\cref{eq:oneTagger_one,eq:oneTagger_three}) we get:
+\begin{align*}
+\text{Coeff}_\text{cosh/sinh}^{\hspace{0.3em}f=+1} =& \left(1+\beta\right)\Bigg(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\Bigg)\\
+\text{Coeff}_\text{cos}^{\hspace{0.3em}f=+1} =& \left(1+\beta\right)\Bigg(d\tilde{\varepsilon}_\text{tag}-\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\Bigg)\\
+\text{Coeff}_\text{sin}^{\hspace{0.3em}f=+1} =& -\left(1+\beta\right)\Bigg(d\tilde{\varepsilon}_\text{tag}-\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\Bigg) = -\text{Coeff}_\text{cos}^{\hspace{0.3em}f=+1}
+\end{align*}
+For the untagged candidates with finalstate $f=+1$ (\cref{eq:oneTagger_five}) the coefficients are
+\begin{align*}
+\text{Coeff}_\text{cosh/sinh}^{\hspace{0.3em}f=+1} &= \left(1+\beta\right)\left(2\left(1-\tilde{\varepsilon}_\text{tag}\right)
+   -\alpha\Delta\varepsilon_\text{tag}\right)\\
+   \text{Coeff}_\text{cos/sin}^{\hspace{0.3em}f=+1} &= \left(1+\beta\right)\left(\Delta\varepsilon_\text{tag}
+   -2\alpha\left(1-\tilde{\varepsilon}_\text{tag}\right)\right)
+\end{align*}
+For the candidates with finalstate $f=-1$  we get very similar results. First again the tagged ones (\cref{eq:oneTagger_two,eq:oneTagger_four}):
+\begin{align*}
+\text{Coeff}_\text{cosh/sinh}^{\hspace{0.3em}f=-1} =& \left(1-\beta\right)\Bigg(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\Bigg)\\
+\text{Coeff}_\text{cos}^{\hspace{0.3em}f=-1} =& \left(1-\beta\right)\Bigg(d\tilde{\varepsilon}_\text{tag}-\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\Bigg)\\
+\text{Coeff}_\text{sin}^{\hspace{0.3em}f=-1} =& -\left(1-\beta\right)\Bigg(d\tilde{\varepsilon}_\text{tag}-\frac{\Delta\varepsilon_\text{tag}}{2}
+    -\alpha\left(\tilde{\varepsilon}_\text{tag}-d\frac{\Delta\varepsilon_\text{tag}}{2}
+    -d\tilde{\varepsilon}_\text{tag}\left(\omega-\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega+\overline{\omega}\right)\right)\\
+    &-d\tilde{\varepsilon}_\text{tag}\left(\omega+\overline{\omega}\right)
+    +d\frac{\Delta\varepsilon_\text{tag}}{2}\left(\omega-\overline{\omega}\right)\Bigg) = -\text{Coeff}_\text{cos}^{\hspace{0.3em}f=-1}
+\end{align*}
+For the untagged candidates with finalstate $f=-1$ (\cref{eq:oneTagger_six}) the coefficients are
+\begin{align*}
+\text{Coeff}_\text{cosh/sinh}^{\hspace{0.3em}f=-1} &= \left(1-\beta\right)\left(2\left(1-\tilde{\varepsilon}_\text{tag}\right)
+   -\alpha\Delta\varepsilon_\text{tag}\right)\\
+   \text{Coeff}_\text{cos/sin}^{\hspace{0.3em}f=-1} &= \left(1-\beta\right)\left(\Delta\varepsilon_\text{tag}
+   -2\alpha\left(1-\tilde{\varepsilon}_\text{tag}\right)\right)
+\end{align*}

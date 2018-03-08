@@ -1,0 +1,6 @@
+# ignore all annoying apple stuff
+.DS_Store
+
+# ignore final pdf files
+DecayRates/DecRates.pdf
+HFLAV_Bd2Dpi/HFLAV.pdf

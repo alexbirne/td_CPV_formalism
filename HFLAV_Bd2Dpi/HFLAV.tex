@@ -1,0 +1,160 @@
+%!TEX program = lualatex
+\documentclass[a4paper, 12pt]{scrartcl}
+
+% Ensure correct use of language specific hyphenation, quotation marks, etc.
+\usepackage[german,UKenglish]{babel}
+
+% enumerate
+\usepackage{enumerate}
+
+% AMS stuff
+\usepackage[tbtags]{mathtools}
+
+% Additional symbols
+\usepackage{wasysym}
+
+% larger symbol sizes, e.g. product symbol
+\usepackage{relsize}
+
+% Braket for Bra-Ket notation of QM
+% \usepackage{braket}
+
+% Unit typesetting
+\usepackage[
+  separate-uncertainty  = true,
+  uncertainty-separator = {\,},
+  range-units           = single,
+  exponent-product      = {\cdot}
+]{siunitx}
+
+% Colors
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+
+% For automatic spacing at the end of macros
+\usepackage{xspace}
+
+% For automatic check if additional punctuation is needed
+% (e.g. for abbriviations) at the end of a sentence
+\usepackage{xpunctuate}
+
+% Adjust boy
+\usepackage{adjustbox}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% for inkscape
+\usepackage{import}
+
+% aligning stuff
+%\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+
+% Inclusion of graphics
+\usepackage{graphicx}
+%\usepackage{transparent}
+
+% Control floats
+\usepackage[section]{placeins}
+
+% Wrapped figures
+\usepackage{wrapfig}
+
+% Better verbatim environments
+\usepackage{fancyvrb}
+
+\usepackage{csquotes}
+
+% Create pdf hyperlinks and pdf meta data
+% cross referencing and hyperrefs
+\usepackage[                % FIXME explain
+   pdftex,                  % Ausgabe-Medium: PDF
+   colorlinks=true,         % farbige Links in der Bildschirm-Version?
+   pdfstartview=FitV,       % wie soll Acrobat starten?
+   linkcolor=black,         % Farbe für Querverweise
+   citecolor=black,         % Farbe für Zitierungen
+   urlcolor=black,          % Farbe für Links
+   bookmarks=true,
+   pdfa=true
+   ]{hyperref}
+\usepackage[all]{hypcap} % Internal hyperlinks to floats.
+\hypersetup{
+  pdfencoding=auto,
+  pdfauthor = {Alex Birnkraut, alex.birnkraut@tu-dortmund.de},
+  pdftitle = {Comparing notations for $CP$ coefficients},
+  pdfsubject = {CP violation measurement at LHCb},
+  pdfkeywords = {HEP, CERN, LHC, LHCb, CP violation, b physics, flavour physics},
+  pdfcreator = {LaTeX with hyperref package},
+  pdfproducer = {lualatex}
+}
+
+% Clever referencing
+\usepackage{cleveref}
+\crefname{chapter}{Ch.\@}{Chs.\@}
+\crefname{section}{Sec.\@}{Secs.\@}
+\crefname{subsection}{Sec.\@}{Secs.\@}
+\crefname{figure}{Fig.\@}{Figs.\@}
+\crefname{table}{Tab.\@}{Tab.\@}
+\crefname{equation}{Eq.\@}{Eqs.\@}
+
+% Special
+%\usepackage[utf8]{luainputenc}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+\numberwithin{equation}{section}
+\allowdisplaybreaks
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber,firstinits=true]{biblatex}
+\DeclareFieldFormat[article]{title}{\enquote{#1},}
+\DeclareFieldFormat[report]{title}{\enquote{#1},}
+\DeclareFieldFormat[book]{title}{\enquote{#1},}
+\renewcommand*{\newunitpunct}{\addcomma\space}%Komma statt Punkt als trennzeichen zwischen autoren/titel
+\DefineBibliographyStrings{german}{andothers = {{et\:al\adddot}},}%et al statt u.a.
+\addbibresource{bibliography.bib}
+
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
+\setmonofont{Inconsolata}[Scale=MatchLowercase]
+
+\usepackage{unicode-math}
+\setmathfont[math-style=ISO,bold-style=ISO]{TeX Gyre Pagella Math}
+
+\usepackage{ifthen}
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %Set true for upright particle symbols
+\usepackage{xspace}
+\usepackage{upgreek}
+\input{lhcb-symbols-def}
+
+%===============================================================================
+
+\newcommand{\f}{\mbox{\ensuremath{D^{-}\pi^{+}}}\xspace}
+\newcommand{\fbar}{\mbox{\ensuremath{D^{+}\pi^{-}}}\xspace}
+
+%===============================================================================
+
+\title{Comparing notations for \CP coefficients for \BdToDpi}
+\date{\today}
+\author{Alex Birnkraut, Vincenzo Battista}
+
+\begin{document}
+\maketitle
+
+All following formulas are taken either from the latest HFLAV paper \cite{Amhis:2016xyh}, or
+the \belle and \babar publications \cite{Ronga:2006hv, Aubert:2006tw}.
+%===============================================================================
+\input{chapters/DecayRateEquations.tex}
+\newpage
+%===============================================================================
+\input{chapters/Coefficients.tex}
+\newpage
+%===============================================================================
+\input{chapters/Contradiction.tex}
+
+\printbibliography
+
+\end{document}

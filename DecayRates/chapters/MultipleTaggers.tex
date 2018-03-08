@@ -1,0 +1,110 @@
+\section{Multiple Taggers}
+
+For one tagger the transformation of mistag probabilities into probabilities for observing a specific tag $d$ given the true flavour $d'$ is quite
+straightforward:
+\begin{equation*}
+    P(d|d')=\delta_{\left|d\right|,1}\varepsilon_\text{tag,d'}\left((1-\omega_{d'})+\delta_{d,-d'}\omega_{d'}\right)
+        +\delta_{d,0}\left(1-\varepsilon_\text{tag,d'}\right)
+\end{equation*}
+This leads to the known $1-\omega$ probability that the tag is correct and the known $\omega$ probability that the tag is wrong. For multiple taggers we
+need to do some more math first to reformulate the Kronecker $\delta$'s and then to multiplicate the probabilites of the different taggers:
+\begin{align*}
+    P(d|d')&=\delta_{\left|d\right|,1}\varepsilon_\text{tag,d'}\left(\frac{1-d'd}{2}+d'd(1-\omega)\right)
+        +\delta_{d,0}\left(1-\varepsilon_\text{tag,d'}\right)\\
+    &=\delta_{\left|d\right|,1}\varepsilon_\text{tag,d'}\frac{1+d'd(1-2\omega)}{2}+\delta_{d,0}\left(1-\varepsilon_\text{tag,d'}\right)\\
+    \Rightarrow P(d|d')&=\prod_{i=1}^{N}\delta_{\left|d_i\right|,1}\varepsilon_{\text{tag,d'}_{i}}\frac{1+d'd_i(1-2\omega)}{2}
+        +\delta_{d_i,0}\left(1-\varepsilon_{\text{tag,d'}_i}\right)
+\end{align*}
+The PDF is now given by
+\begin{equation*}
+    P(t,d,f)=P(d|\Bz)P(t,\Bz,f)+P(d|\Bzb)P(t,\Bzb,f)
+\end{equation*}
+Next we can \enquote{replace} the probabilities $P(t,\Bz,f)$ and $P(t,\Bzb,f)$ with the corresponding decay rates from
+\cref{eq:asymmetries_one,eq:asymmetries_two,eq:asymmetries_three,eq:asymmetries_four}. Doing this we only have to split between different
+finalstates. We start first with the calculations for the finalstate $f$:
+\begin{align*}
+    P(t,\Bz\to f)&= P(t,\Bzb\to f) =P(d|\Bz)\Gamma(\Bz\to f)+P(d|\Bzb)\Gamma(\Bzb\to f) \\
+    &\propto e^{-\Gamma t}\left(1+\beta\right)\left[\left(P(d|\Bz)\left(1-\alpha\right)+P(d|\Bzb)\left(1+\alpha\right)\right)
+    \cosh\left(\frac{\Delta \Gamma}{2}t\right)\right.\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}+\left(P(d|\Bz)\left(1-\alpha\right)+P(d|\Bzb)\left(1+\alpha\right)\right)
+    D\sinh\left(\frac{\Delta \Gamma}{2}t\right)\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}+\left(P(d|\Bz)\left(1-\alpha\right)-P(d|\Bzb)\left(1+\alpha\right)\right)
+    C\cos\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}-\left.\left(P(d|\Bz)\left(1-\alpha\right)-P(d|\Bzb)\left(1+\alpha\right)\right)
+    S\sin\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\right]\\
+    &=e^{-\Gamma t}\left(1+\beta\right)\left[\left(\left(P(d|\Bz)+P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)-P(d|\Bzb)\right)\right)
+    \cosh\left(\frac{\Delta \Gamma}{2}t\right)\right.\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}+\left(\left(P(d|\Bz)+P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)-P(d|\Bzb)\right)\right)
+    D\sinh\left(\frac{\Delta \Gamma}{2}t\right)\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}+\left(\left(P(d|\Bz)-P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)+P(d|\Bzb)\right)\right)
+    C\cos\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1+\beta\right)}-\left.\left(\left(P(d|\Bz)-P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)+P(d|\Bzb)\right)\right)
+    S\sin\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\right]
+\end{align*}
+In analogy the calculations for the finalstate $\overline{f}$:
+\begin{align*}
+    P(t,\Bzb\to \overline{f})&= P(t,\Bz\to \overline{f}) =P(d|\Bzb)\Gamma(\Bzb\to \overline{f})+P(d|\Bz)\Gamma(\Bz\to \overline{f}) \\
+    &\propto e^{-\Gamma t}\left(1-\beta\right)\left[\left(P(d|\Bz)\left(1-\alpha\right)+P(d|\Bzb)\left(1+\alpha\right)\right)
+    \cosh\left(\frac{\Delta \Gamma}{2}t\right)\right.\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}+\left(P(d|\Bz)\left(1-\alpha\right)+P(d|\Bzb)\left(1+\alpha\right)\right)
+    \overline{D}\sinh\left(\frac{\Delta \Gamma}{2}t\right)\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}+\left(P(d|\Bz)\left(1-\alpha\right)-P(d|\Bzb)\left(1+\alpha\right)\right)
+    \overline{C}\cos\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}-\left.\left(P(d|\Bz)\left(1-\alpha\right)-P(d|\Bzb)\left(1+\alpha\right)\right)
+    \overline{S}\sin\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\right]\\
+    &=e^{-\Gamma t}\left(1-\beta\right)\left[\left(\left(P(d|\Bz)+P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)-P(d|\Bzb)\right)\right)
+    \cosh\left(\frac{\Delta \Gamma}{2}t\right)\right.\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}+\left(\left(P(d|\Bz)+P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)-P(d|\Bzb)\right)\right)
+    D\sinh\left(\frac{\Delta \Gamma}{2}t\right)\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}+\left(\left(P(d|\Bz)-P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)+P(d|\Bzb)\right)\right)
+    C\cos\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\\
+    &\hphantom{\propto e^{-\Gamma t}\left(1-\beta\right)}-\left.\left(\left(P(d|\Bz)-P(d|\Bzb)\right)-\alpha\left(P(d|\Bz)+P(d|\Bzb)\right)\right)
+    S\sin\left(\Delta mt\right)\vphantom{\cosh\left(\frac{\Delta \Gamma}{2}t\right)}\right]
+\end{align*}
+We see that for calculating the coefficients in front of the trogonometric and hyperbolic terms only
+\begin{align}
+    \Delta_P &= P(d|\Bz)-P(d|\Bzb)\text{ and}\\
+    \Sigma_P &= P(d|\Bz)+P(d|\Bzb)
+\end{align}
+are needed. As a first step we calculate the probabilities $P(d|\Bz)$ and $P(d|\Bzb)$ for two taggers labelled with OS (opposite side) and SS (same side):
+\begin{align*}
+    P(d|\Bz) =& \delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\varepsilon_\text{tag,OS}\varepsilon_\text{tag,SS}
+        \frac{1+d_\text{OS}\left(1-2\omega_\text{OS}\right)}{2}\frac{1+d_\text{SS}\left(1-2\omega_\text{SS}\right)}{2}\\
+    &+\delta_{\left|d_{OS}\right|,1}\delta_{d_{SS},0}\varepsilon_\text{tag,OS}\left(1-\varepsilon_\text{tag,SS}\right)
+        \frac{1+d_\text{OS}\left(1-2\omega_\text{OS}\right)}{2}\\
+    &+\delta_{\left|d_{SS}\right|,1}\delta_{d_{OS},0}\varepsilon_\text{tag,SS}\left(1-\varepsilon_\text{tag,OS}\right)
+    \frac{1+d_\text{SS}\left(1-2\omega_\text{SS}\right)}{2}\\
+    &+\delta_{d_{OS},0}\delta_{d_{SS},0}\left(1-\varepsilon_\text{tag,OS}\right)\left(1-\varepsilon_\text{tag,SS}\right)\\
+    =&\delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\frac{\varepsilon_\text{tag,OS}\varepsilon_\text{tag,SS}}{4}\big[1+d_\text{SS}
+        \left(1-2\omega_\text{SS}\right)+d_\text{OS}\left(1-2\omega_\text{OS}\right)\\
+    &\hphantom{\delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\frac{\varepsilon_\text{tag,OS}\varepsilon_\text{tag,SS}}{4}\big[1}
+        +d_\text{SS}d_\text{OS}\left(1-2\omega_\text{OS}-2\omega_\text{SS}+4\omega_\text{OS}\omega_\text{SS}\right)\big]\\
+    &+\delta_{\left|d_{OS}\right|,1}\delta_{d_{SS},0}\frac{\varepsilon_\text{tag,OS}}{2}\left[1-\varepsilon_\text{tag,SS}+d_\text{OS}
+        \left(1-\varepsilon_\text{tag,SS}-2\omega_\text{OS}+2\omega_\text{OS}\varepsilon_\text{tag,SS}\right)\right]\\
+    &+\delta_{\left|d_{SS}\right|,1}\delta_{d_{OS},0}\frac{\varepsilon_\text{tag,SS}}{2}\left[1-\varepsilon_\text{tag,OS}+d_\text{SS}
+        \left(1-\varepsilon_\text{tag,OS}-2\omega_\text{SS}+2\omega_\text{SS}\varepsilon_\text{tag,OS}\right)\right]\\
+    &+\delta_{d_{OS},0}\delta_{d_{SS},0}\left(1-\varepsilon_\text{tag,OS}-\varepsilon_\text{tag,SS}
+        +\varepsilon_\text{tag,OS}\varepsilon_\text{tag,SS}\right)\\
+    P(d|\Bzb) =& \delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\overline{\varepsilon}_\text{tag,OS}\overline{\varepsilon}_\text{tag,SS}
+        \frac{1-d_\text{OS}\left(1-2\overline{\omega}_\text{OS}\right)}{2}\frac{1-d_\text{SS}\left(1-2\overline{\omega}_\text{SS}\right)}{2}\\
+        &+\delta_{\left|d_{OS}\right|,1}\delta_{d_{SS},0}\overline{\varepsilon}_\text{tag,OS}\left(1-\overline{\varepsilon}_\text{tag,SS}\right)
+            \frac{1-d_\text{OS}\left(1-2\overline{\omega}_\text{OS}\right)}{2}\\
+        &+\delta_{\left|d_{SS}\right|,1}\delta_{d_{OS},0}\overline{\varepsilon}_\text{tag,SS}\left(1-\overline{\varepsilon}_\text{tag,OS}\right)
+            \frac{1-d_\text{SS}\left(1-2\overline{\omega}_\text{SS}\right)}{2}\\
+        &+\delta_{d_{OS},0}\delta_{d_{SS},0}\left(1-\overline{\varepsilon}_\text{tag,OS}\right)\left(1-\overline{\varepsilon}_\text{tag,SS}\right)\\
+    =&\delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\frac{\overline{\varepsilon}_\text{tag,OS}\overline{\varepsilon}_\text{tag,SS}}{4}
+        \big[1-d_\text{SS}\left(1-2\overline{\omega}_\text{SS}\right)-d_\text{OS}\left(1-2\overline{\omega}_\text{OS}\right)\\
+    &\hphantom{\delta_{\left|d_{OS}\right|,1}\delta_{\left|d_{SS}\right|,1}\frac{\overline{\varepsilon}_\text{tag,OS}
+        \overline{\varepsilon}_\text{tag,SS}}{4}\big[1}+d_\text{SS}d_\text{OS}\left(1-2\overline{\omega}_\text{OS}-2\overline{\omega}_\text{SS}
+        +4\overline{\omega}_\text{OS}\overline{\omega}_\text{SS}\right)\big]\\
+    &+\delta_{\left|d_{OS}\right|,1}\delta_{d_{SS},0}\frac{\overline{\varepsilon}_\text{tag,OS}}{2}\left[1-\overline{\varepsilon}_\text{tag,SS}-d_\text{OS}
+        \left(1-\overline{\varepsilon}_\text{tag,SS}-2\overline{\omega}_\text{OS}
+        +2\overline{\omega}_\text{OS}\overline{\varepsilon}_\text{tag,SS}\right)\right]\\
+    &+\delta_{\left|d_{SS}\right|,1}\delta_{d_{OS},0}\frac{\overline{\varepsilon}_\text{tag,SS}}{2}\left[1-\overline{\varepsilon}_\text{tag,OS}-d_\text{SS}
+        \left(1-\overline{\varepsilon}_\text{tag,OS}-2\overline{\omega}_\text{SS}
+        +2\overline{\omega}_\text{SS}\overline{\varepsilon}_\text{tag,OS}\right)\right]\\
+    &+\delta_{d_{OS},0}\delta_{d_{SS},0}\left(1-\overline{\varepsilon}_\text{tag,OS}-\overline{\varepsilon}_\text{tag,SS}
+        +\overline{\varepsilon}_\text{tag,OS}\overline{\varepsilon}_\text{tag,SS}\right)
+\end{align*}
+With theses expressions the coefficients for the $\cosh$-, $\sinh$-, $\cos$- and $\sin$-terms can be calculated by computing the difference and sum for the
+four possible combinations of tagged and untagged candidates.

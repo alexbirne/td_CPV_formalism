@@ -1,0 +1,81 @@
+\section{Time evolution in the \Bz-\Bzb sytem}
+
+First it should be mentioned that all given formulas are independent if we are looking at \Bz or \Bs mesons. We will start right at the beginning with the two-state system of the \Bz and the \Bzb system. The most general description of this sytem is via
+the Schrödinger equation
+\begin{equation}
+i\frac{d}{dt}\begin{pmatrix} \Bz \\ \Bzb \end{pmatrix} = H \begin{pmatrix} \Bz \\ \Bzb \end{pmatrix}
+\end{equation}
+with
+\begin{equation}
+    H = M-\frac{i}{2}\Gamma = \begin{pmatrix} m_{11}-\frac{i}{2}\Gamma_{11} & m_{12}-\frac{i}{2}\Gamma_{12} \\
+                                              m_{21}-\frac{i}{2}\Gamma_{21} & m_{22}-\frac{i}{2}\Gamma_{22} \end{pmatrix}.
+\end{equation}
+where \Bz and \Bzb are the flavour eigenstates of the \B meson system. Due to $CPT$ invariance we consider
+\begin{align}
+    &m_{11} = m_{22} = m\\
+    &\Gamma_{11} = \Gamma_{22} = \Gamma\\
+    &m_{12} = m_{21}^*\\
+    &\Gamma_{12} = \Gamma_{21}^*
+\end{align}
+what leads to
+\begin{equation}
+    H = M-\frac{i}{2}\Gamma = \begin{pmatrix} m-\frac{i}{2}\Gamma & m_{12}-\frac{i}{2}\Gamma_{12} \\
+                                              m_{12}^*-\frac{i}{2}\Gamma_{12}^* & m-\frac{i}{2}\Gamma \end{pmatrix}.
+\end{equation}
+If we diagonalise this matrix we get the eigenvalues
+\begin{align}
+    \mu_H = m_H-\frac{i}{2}\Gamma_H = m+\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma + 2\mathcal{Im}(F)\right)\\
+    \mu_L = m_L-\frac{i}{2}\Gamma_L = m-\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma - 2\mathcal{Im}(F)\right)
+\end{align}
+with
+\begin{equation}
+    F = \sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^*-\frac{i}{2}\Gamma_{12}^*\right)}
+\end{equation}
+where the indices $H$ and $L$ refer to the heavy ($\B_H$) and light ($\B_L$) mass eigenstates of the \B-system. Those can be expressed as functions
+of the flavour eigenstates:
+\begin{align}
+    B_L &= p\Bz + q \Bzb\\
+    B_H &= p\Bz - q \Bzb
+\end{align}
+with
+\begin{equation}
+    \frac{q}{p} = \sqrt{\frac{m_{12}^*-\frac{i}{2}\Gamma_{12}^*}{m_{12}-\frac{i}{2}\Gamma_{12}}}
+    = \frac{\Delta m-\frac{i}{2}\Delta\Gamma}{2\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)}.
+\end{equation}
+The Schrödinger equation is now
+\begin{equation}
+    i\frac{d}{dt}\begin{pmatrix} \B_L \\ \B_H \end{pmatrix} = \begin{pmatrix} \mu_L & 0 \\ 0 & \mu_H \end{pmatrix}
+    \begin{pmatrix} \B_L \\ \B_H \end{pmatrix}
+\end{equation}
+which is quite easy to solve to get the time evolution for the mass eigenstates:
+\begin{align}
+    \B_L(t) &= e^{-i\mu_Lt}\B_L\\
+    \B_H(t) &= e^{-i\mu_Ht}\B_H
+\end{align}
+We now express the flavour eigenstates as functions of the mass eigenstates to get their time evolution as well:
+\begin{align}
+    \B_L+\B_H = 2p\Bz &\Leftrightarrow \Bz = \frac{1}{2p}\left(\B_L + \B_H\right)\\
+    \B_L-\B_H = 2q\Bzb &\Leftrightarrow \Bzb = \frac{1}{2q}\left(\B_L - \B_H\right)
+\end{align}
+The time evolutions follows straight forward:
+\begin{align}
+    \Bz(t) &= \frac{1}{2p}\left(\B_L(t)+\B_H(t)\right)\nonumber\\
+    &= \frac{1}{2p}\left[e^{-i\mu_Lt}\B_L + e^{-i\mu_Ht}\B_H\right]\nonumber\\
+    &=\frac{1}{2p}\left[e^{-i\mu_Lt}\left(p\Bz + q \Bzb\right) + e^{-i\mu_Ht}\left(p\Bz - q \Bzb\right)\right] \nonumber\\
+    &=\frac{1}{2}\Bz\left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right) - \frac{q}{2p} \Bzb \left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)\nonumber\\
+    &= \Bz e_+ - \frac{q}{p} \Bzb e_-\\
+    \Bzb(t) &= \frac{1}{2q}\left(\B_L(t)-\B_H(t)\right)\nonumber\\
+    &= \frac{1}{2q} \left[e^{-i\mu_Lt}\left(p\Bz + q \Bzb\right) - e^{-i\mu_Ht}\left(p\Bz - q \Bzb\right)\right]\nonumber\\
+    &= \frac{1}{2} \Bzb \left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right) -\frac{p}{q} \Bz \left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)\nonumber\\
+    &= \Bzb e_+ - \frac{q}{p}\Bz e_-
+\end{align}
+with
+\begin{align}
+    e_+ &= \frac{1}{2}\left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right)\\
+    e_- &= \frac{1}{2}\left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)
+\end{align}
+Writing this in the bra-ket notation gives us:
+\begin{align}
+    \ket{\Bz(t)} = \ket{\Bz}e_+ -\frac{q}{p} \ket{\Bzb}e_-\\
+    \ket{\Bzb(t)} = \ket{\Bzb}e_+ -\frac{p}{q} \ket{\Bz}e_-
+\end{align}
