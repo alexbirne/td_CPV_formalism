@@ -108,11 +108,12 @@
 \allowdisplaybreaks
 
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{TeX Gyre Pagella}
-\setsansfont{TeX Gyre Heros}[Scale=MatchLowercase]
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{XITS}
+\setsansfont{TeX Gyre Heros}
 
-\usepackage{unicode-math}
-\setmathfont[math-style=ISO,bold-style=ISO]{TeX Gyre Pagella Math}
+\usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
+\setmathfont[Scale=MatchUppercase]{XITS Math}
 
 \usepackage{scalerel}
 
@@ -123,10 +124,27 @@
 \usepackage{upgreek}
 \input{lhcb-symbols-def}
 
+\newcommand{\fbar}{\mbox{\ensuremath{\kern 2.5pt\overline{\kern -2.5pt f\kern 1pt}}}\xspace}
+\newcommand{\f}{\mbox{\ensuremath{f}}\xspace}
+\newcommand{\Af}{\mbox{\ensuremath{A_{\kern -1.5pt f}}}\xspace}
+\newcommand{\Afbar}{\mbox{\ensuremath{A_{\kern 1.0pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\Abarf}{\mbox{\ensuremath{\overline{\kern -2.5pt A\kern -1.0pt}_{\kern -0.5pt f}}}\xspace}
+\newcommand{\Abarfbar}{\mbox{\ensuremath{\overline{\kern -2.5pt A\kern -1.0pt}_{\kern 2.0pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\Lf}{\mbox{\ensuremath{\lambda^{\phantom{*}}_{\kern -1.5pt f}}}\xspace}
+\newcommand{\Lfst}{\mbox{\ensuremath{\lambda^*_{\kern -1.5pt f}}}\xspace}
+\newcommand{\Lfbar}{\mbox{\ensuremath{\lambda^{\phantom{*}}_{\kern 0.5pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\Lfbarst}{\mbox{\ensuremath{\lambda^{*}_{\kern 0.5pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\Sf}{\mbox{\ensuremath{S_{\kern -1.5pt f}}}\xspace}
+\newcommand{\Sfbar}{\mbox{\ensuremath{S_{\kern 1.0pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\Cf}{\mbox{\ensuremath{C_{\kern -1.5pt f}}}\xspace}
+\newcommand{\Cfbar}{\mbox{\ensuremath{C_{\kern 1.0pt\overline{\kern -2.5pt f\kern 1pt}}}}\xspace}
+\newcommand{\ADGf}{\mbox{\ensuremath{A_{\kern -1.5pt f}^{\DG}}}\xspace}
+\newcommand{\ADGfbar}{\mbox{\ensuremath{A_{\kern 1.0pt\overline{\kern -2.5pt f\kern 1.0pt}}^{\DG}}}\xspace}
+
 %===============================================================================
 
 
-\title{Decay rates for $\mathbf{CP}$ violating $\mathbf{B}$ processes decaying into flavour specific finalstates}
+\title{Decay rates for $\symbfsf{C{}P}$ violating $\symbfsf{\B}$ processes decaying into flavour specific finalstates}
 \date{\today}
 \author{Alex Birnkraut}
 
@@ -156,7 +174,7 @@
 \input{chapters/TimeEvolution.tex}
 %===============================================================================
 \input{chapters/Calculations.tex}
-\newpage
+% \newpage
 %===============================================================================
 \input{chapters/TheoreticalDecayRates.tex}
 %===============================================================================

@@ -1,39 +1,40 @@
 \section{Calculations}
 
 In the next steps of calculating the decay rates we will need some terms repeatedly. Therefore theses terms should be calculated here in a separated chapter
-to keep the next parts then clearer. As this calculations here does not depend on any specific finalstate we don't distinguish between $\lambda$ and
-$\overline{\lambda}$.\\
+to keep the next parts then clearer. As this calculations here does not depend on any specific finalstate we don't distinguish between \Lf and
+\Lfbar and just use a general parameter $\lambda$.
+
 The first term we will need are
 \begin{equation}
     e_{+}e_{-}^*\lambda^{\ast}+e_+^*e_-\lambda \hspace{0.5cm} \text{and} \hspace{0.5cm} e_{+}^*e_{-}\lambda^{\ast}+e_+e_-^*\lambda.
 \end{equation}
 To calculate these we start with writing down the full expressions of $e_+$, $e_+^*$, $e_-$ and $e_-^*$ :
 \begin{align}
-  e_+ &= \frac{1}{2}\left(e^{\left(-im_H-\frac{1}{2}\Gamma_H\right)t}+e^{\left(-im_L-\frac{1}{2}\Gamma_L\right)t}\right)\\
-  e_+^* &= \frac{1}{2}\left(e^{\left(im_H-\frac{1}{2}\Gamma_H\right)t}+e^{\left(im_L-\frac{1}{2}\Gamma_L\right)t}\right)\\
-  e_- &= \frac{1}{2}\left(e^{\left(-im_H-\frac{1}{2}\Gamma_H\right)t}-e^{\left(-im_L-\frac{1}{2}\Gamma_L\right)t}\right)\\
-  e_-^* &= \frac{1}{2}\left(e^{\left(im_H-\frac{1}{2}\Gamma_H\right)t}-e^{\left(im_L-\frac{1}{2}\Gamma_L\right)t}\right)
+  e_+ &= \frac{1}{2}\left(e^{\left(-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)t}+e^{\left(-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}\right)\\
+  e_+^* &= \frac{1}{2}\left(e^{\left(im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)t}+e^{\left(im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}\right)\\
+  e_- &= \frac{1}{2}\left(e^{\left(-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)t}-e^{\left(-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}\right)\\
+  e_-^* &= \frac{1}{2}\left(e^{\left(im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)t}-e^{\left(im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}\right)
 \end{align}
 Now we can compute the products of these exponential functions:
 \begin{align}
-    e_+e_-^* &=\frac{1}{4}\left(e^{-\Gamma_Ht}-e^{\left(-im_H-\frac{1}{2}\Gamma_H+im_L-\frac{1}{2}\Gamma_L\right)t}
-    +e^{\left(-im_L-\frac{1}{2}\Gamma_L+im_H-\frac{1}{2}\Gamma_H\right)}-e^{-\Gamma_Lt}\right)\nonumber\\
-    &= \frac{1}{4}\left(e^{-\Gamma_Ht}-e^{-i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}
-    +e^{i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}-e^{-\Gamma_Lt}\right)\nonumber\\
-    &=\frac{1}{4}\left(e^{-\Gamma_Ht}-e^{-\Gamma_Lt}+e^{-\Gamma t}\left(e^{i\Delta mt}-e^{-i\Delta mt}\right)\right)\nonumber\\
-    &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_H+\Gamma\right)t} - e^{\left(-\Gamma_L+\Gamma\right)t} + 2i\sin\left(\Delta m\right)\right)\nonumber\\
-    &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{-\frac{\Gamma_H-\Gamma_L}{2}t} - \frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}\right)
+    e_+e_-^* &=\frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{\left(-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}+im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}
+    +e^{\left(-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}+im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)}-e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+    &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{-i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}
+    +e^{i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}-e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+    &=\frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{-\Gamma_{\text{L}}t}+e^{-\Gamma t}\left(e^{i\Delta mt}-e^{-i\Delta mt}\right)\right)\nonumber\\
+    &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_{\text{H}}+\Gamma\right)t} - e^{\left(-\Gamma_{\text{L}}+\Gamma\right)t} + 2i\sin\left(\Delta m\right)\right)\nonumber\\
+    &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{-\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t} - \frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}\right)
     +i\sin\left(\Delta m\right)\nonumber\\
     &= -\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}\left(e^{\frac{\Delta\Gamma}{2}t} - e^{-\frac{\Delta\Gamma}{2}t}\right)
     -i\sin\left(\Delta m\right)\right)\nonumber\\
     &= -\frac{1}{2}e^{-\Gamma t}\left(\sinh\left(\frac{\Delta\Gamma}{2}t\right)-i\sin\left(\Delta m t\right)\right)\label{eq:first_calculation}\\
-    e_+^*e_- &=\frac{1}{4}\left(e^{-\Gamma_Ht}-e^{\left(im_H-\frac{1}{2}\Gamma_H-im_L-\frac{1}{2}\Gamma_L\right)t}
-    +e^{\left(im_L-\frac{1}{2}\Gamma_L-im_H-\frac{1}{2}\Gamma_H\right)}-e^{-\Gamma_Lt}\right)\nonumber\\
-    &= \frac{1}{4}\left(e^{-\Gamma_Ht}-e^{i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}
-    +e^{-i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}-e^{-\Gamma_Lt}\right)\nonumber\\
-    &=\frac{1}{4}\left(e^{-\Gamma_Ht}-e^{-\Gamma_Lt}-e^{-\Gamma t}\left(e^{i\Delta mt}-e^{-i\Delta mt}\right)\right)\nonumber\\
-    &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_H+\Gamma\right)t} - e^{\left(-\Gamma_L+\Gamma\right)t} - 2i\sin\left(\Delta m\right)\right)\nonumber\\
-    &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{-\frac{\Gamma_H-\Gamma_L}{2}t} - \frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}\right)
+    e_+^*e_- &=\frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{\left(im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}
+    +e^{\left(im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}\right)}-e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+    &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}
+    +e^{-i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}-e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+    &=\frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{-\Gamma_{\text{L}}t}-e^{-\Gamma t}\left(e^{i\Delta mt}-e^{-i\Delta mt}\right)\right)\nonumber\\
+    &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_{\text{H}}+\Gamma\right)t} - e^{\left(-\Gamma_{\text{L}}+\Gamma\right)t} - 2i\sin\left(\Delta m\right)\right)\nonumber\\
+    &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{-\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t} - \frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}\right)
     -i\sin\left(\Delta m\right)\nonumber\\
     &= -\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}\left(e^{\frac{\Delta\Gamma}{2}t} - e^{-\frac{\Delta\Gamma}{2}t}\right)
     +i\sin\left(\Delta m\right)\right)\nonumber\\
@@ -64,18 +65,18 @@ The next terms we will need are
 \end{equation}
 Again we compute first the products of the exponential functions:
 \begin{align}
-  e_+e_+^* &= \frac{1}{4}\left(e^{-\Gamma_Ht}+e^{\left(-im_H-\frac{1}{2}\Gamma_H+im_L-\frac{1}{2}\Gamma_L\right)t}
-  +e^{\left(-im_L-\frac{1}{2}\Gamma_L+im_H-\frac{1}{2}\Gamma_L\right)t}+e^{-\Gamma_Lt}\right)\nonumber\\
-  &= \frac{1}{4}\left(e^{-\Gamma_Ht}+e^{-\Gamma_Lt}+e^{-i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}
-  +e^{i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}\right)\nonumber\\
-  &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_L+\Gamma\right)t}+e^{\left(-\Gamma_H+\Gamma\right)t}+2\cos\left(\Delta mt\right)\right)\nonumber\\
-  &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}+\frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}+\cos\left(\Delta mt\right)\right)\nonumber\\
+  e_+e_+^* &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}+e^{\left(-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}+im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}
+  +e^{\left(-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}+im_{\text{H}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}+e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+  &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}+e^{-\Gamma_{\text{L}}t}+e^{-i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}
+  +e^{i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}\right)\nonumber\\
+  &=\frac{1}{4}e^{-\Gamma t}\left(e^{\left(-\Gamma_{\text{L}}+\Gamma\right)t}+e^{\left(-\Gamma_{\text{H}}+\Gamma\right)t}+2\cos\left(\Delta mt\right)\right)\nonumber\\
+  &=\frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}+\frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}+\cos\left(\Delta mt\right)\right)\nonumber\\
   &=\frac{1}{2}e^{-\Gamma t}\left(\cosh\left(\frac{\Gamma}{2}t\right)+\cos\left(\Delta mt\right)\right)\label{eq:third_calculation}\\
-  e_-e_-^* &= \frac{1}{4}\left(e^{-\Gamma_Ht}-e^{\left(-im_H-\frac{1}{2}\Gamma_H+im_L-\frac{1}{2}\Gamma_L\right)t}
-  -e^{\left(-im_L-\frac{1}{2}\Gamma_L+im_H-\frac{1}{2}\Gamma_L\right)t}+e^{-\Gamma_Lt}\right)\nonumber\\
-  &= \frac{1}{4}\left(e^{-\Gamma_Ht}+e^{-\Gamma_Lt}-e^{-i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}
-  -e^{i\left(m_H-m_L\right)t}e^{-\frac{1}{2}\left(\Gamma_H+\Gamma_L\right)t}\right)\nonumber\\
-  &= \frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}+\frac{1}{2}e^{\frac{\Gamma_H-\Gamma_L}{2}t}-\cos\left(\Delta mt\right)\right)\nonumber\\
+  e_-e_-^* &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}-e^{\left(-im_{\text{H}}-\frac{1}{2}\Gamma_{\text{H}}+im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}
+  -e^{\left(-im_{\text{L}}-\frac{1}{2}\Gamma_{\text{L}}+im_{\text{H}}-\frac{1}{2}\Gamma_{\text{L}}\right)t}+e^{-\Gamma_{\text{L}}t}\right)\nonumber\\
+  &= \frac{1}{4}\left(e^{-\Gamma_{\text{H}}t}+e^{-\Gamma_{\text{L}}t}-e^{-i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}
+  -e^{i\left(m_{\text{H}}-m_{\text{L}}\right)t}e^{-\frac{1}{2}\left(\Gamma_{\text{H}}+\Gamma_{\text{L}}\right)t}\right)\nonumber\\
+  &= \frac{1}{2}e^{-\Gamma t}\left(\frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}+\frac{1}{2}e^{\frac{\Gamma_{\text{H}}-\Gamma_{\text{L}}}{2}t}-\cos\left(\Delta mt\right)\right)\nonumber\\
   &= \frac{1}{2}e^{-\Gamma t}\left(\cosh\left(\frac{\Gamma}{2}t\right)-\cos\left(\Delta mt\right)\right)\label{eq:fourth_calculation}
 \end{align}
 Now using \cref{eq:third_calculation} and \cref{eq:fourth_calculation} the last two results for this chapter are the following:

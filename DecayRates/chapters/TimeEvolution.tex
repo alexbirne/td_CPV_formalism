@@ -24,18 +24,18 @@ what leads to
 \end{equation}
 If we diagonalise this matrix we get the eigenvalues
 \begin{align}
-    \mu_H = m_H-\frac{i}{2}\Gamma_H = m+\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma + 2\mathcal{Im}(F)\right)\\
-    \mu_L = m_L-\frac{i}{2}\Gamma_L = m-\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma - 2\mathcal{Im}(F)\right)
+    \mu_{\text{H}} = m_{\text{H}}-\frac{i}{2}\Gamma_{\text{H}} = m+\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma + 2\mathcal{Im}(F)\right)\\
+    \mu_{\text{L}} = m_{\text{L}}-\frac{i}{2}\Gamma_{\text{L}} = m-\mathcal{Re}(F)-\frac{i}{2}\left(\Gamma - 2\mathcal{Im}(F)\right)
 \end{align}
 with
 \begin{equation}
     F = \sqrt{\left(m_{12}-\frac{i}{2}\Gamma_{12}\right)\left(m_{12}^*-\frac{i}{2}\Gamma_{12}^*\right)}
 \end{equation}
-where the indices $H$ and $L$ refer to the heavy ($\B_H$) and light ($\B_L$) mass eigenstates of the \B-system. Those can be expressed as functions
+where the indices $H$ and $L$ refer to the heavy ($\B_{\text{H}}$) and light ($\B_{\text{L}}$) mass eigenstates of the \B-system. Those can be expressed as functions
 of the flavour eigenstates:
 \begin{align}
-    B_L &= p\Bz + q \Bzb\\
-    B_H &= p\Bz - q \Bzb
+    B_{\text{L}} &= p\Bz + q \Bzb\\
+    B_{\text{H}} &= p\Bz - q \Bzb
 \end{align}
 with
 \begin{equation}
@@ -44,35 +44,35 @@ with
 \end{equation}
 The Schrödinger equation is now
 \begin{equation}
-    i\frac{d}{dt}\begin{pmatrix} \B_L \\ \B_H \end{pmatrix} = \begin{pmatrix} \mu_L & 0 \\ 0 & \mu_H \end{pmatrix}
-    \begin{pmatrix} \B_L \\ \B_H \end{pmatrix}
+    i\frac{d}{dt}\begin{pmatrix} \B_{\text{L}} \\ \B_{\text{H}} \end{pmatrix} = \begin{pmatrix} \mu_{\text{L}} & 0 \\ 0 & \mu_{\text{H}} \end{pmatrix}
+    \begin{pmatrix} \B_{\text{L}} \\ \B_{\text{H}} \end{pmatrix}
 \end{equation}
 which is quite easy to solve to get the time evolution for the mass eigenstates:
 \begin{align}
-    \B_L(t) &= e^{-i\mu_Lt}\B_L\\
-    \B_H(t) &= e^{-i\mu_Ht}\B_H
+    \B_{\text{L}}(t) &= e^{-i\mu_{\text{L}}t}\B_{\text{L}}\\
+    \B_{\text{H}}(t) &= e^{-i\mu_{\text{H}}t}\B_{\text{H}}
 \end{align}
 We now express the flavour eigenstates as functions of the mass eigenstates to get their time evolution as well:
 \begin{align}
-    \B_L+\B_H = 2p\Bz &\Leftrightarrow \Bz = \frac{1}{2p}\left(\B_L + \B_H\right)\\
-    \B_L-\B_H = 2q\Bzb &\Leftrightarrow \Bzb = \frac{1}{2q}\left(\B_L - \B_H\right)
+    \B_{\text{L}}+\B_{\text{H}} = 2p\Bz &\Leftrightarrow \Bz = \frac{1}{2p}\left(\B_{\text{L}} + \B_{\text{H}}\right)\\
+    \B_{\text{L}}-\B_{\text{H}} = 2q\Bzb &\Leftrightarrow \Bzb = \frac{1}{2q}\left(\B_{\text{L}} - \B_{\text{H}}\right)
 \end{align}
 The time evolutions follows straight forward:
 \begin{align}
-    \Bz(t) &= \frac{1}{2p}\left(\B_L(t)+\B_H(t)\right)\nonumber\\
-    &= \frac{1}{2p}\left[e^{-i\mu_Lt}\B_L + e^{-i\mu_Ht}\B_H\right]\nonumber\\
-    &=\frac{1}{2p}\left[e^{-i\mu_Lt}\left(p\Bz + q \Bzb\right) + e^{-i\mu_Ht}\left(p\Bz - q \Bzb\right)\right] \nonumber\\
-    &=\frac{1}{2}\Bz\left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right) - \frac{q}{2p} \Bzb \left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)\nonumber\\
+    \Bz(t) &= \frac{1}{2p}\left(\B_{\text{L}}(t)+\B_{\text{H}}(t)\right)\nonumber\\
+    &= \frac{1}{2p}\left[e^{-i\mu_{\text{L}}t}\B_{\text{L}} + e^{-i\mu_{\text{H}}t}\B_{\text{H}}\right]\nonumber\\
+    &=\frac{1}{2p}\left[e^{-i\mu_{\text{L}}t}\left(p\Bz + q \Bzb\right) + e^{-i\mu_{\text{H}}t}\left(p\Bz - q \Bzb\right)\right] \nonumber\\
+    &=\frac{1}{2}\Bz\left(e^{-i\mu_{\text{H}}t} + e^{-i\mu_{\text{L}}t} \right) - \frac{q}{2p} \Bzb \left(e^{-i\mu_{\text{H}}t} - e^{-i\mu_{\text{L}}t} \right)\nonumber\\
     &= \Bz e_+ - \frac{q}{p} \Bzb e_-\\
-    \Bzb(t) &= \frac{1}{2q}\left(\B_L(t)-\B_H(t)\right)\nonumber\\
-    &= \frac{1}{2q} \left[e^{-i\mu_Lt}\left(p\Bz + q \Bzb\right) - e^{-i\mu_Ht}\left(p\Bz - q \Bzb\right)\right]\nonumber\\
-    &= \frac{1}{2} \Bzb \left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right) -\frac{p}{q} \Bz \left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)\nonumber\\
+    \Bzb(t) &= \frac{1}{2q}\left(\B_{\text{L}}(t)-\B_{\text{H}}(t)\right)\nonumber\\
+    &= \frac{1}{2q} \left[e^{-i\mu_{\text{L}}t}\left(p\Bz + q \Bzb\right) - e^{-i\mu_{\text{H}}t}\left(p\Bz - q \Bzb\right)\right]\nonumber\\
+    &= \frac{1}{2} \Bzb \left(e^{-i\mu_{\text{H}}t} + e^{-i\mu_{\text{L}}t} \right) -\frac{p}{q} \Bz \left(e^{-i\mu_{\text{H}}t} - e^{-i\mu_{\text{L}}t} \right)\nonumber\\
     &= \Bzb e_+ - \frac{q}{p}\Bz e_-
 \end{align}
 with
 \begin{align}
-    e_+ &= \frac{1}{2}\left(e^{-i\mu_Ht} + e^{-i\mu_Lt} \right)\\
-    e_- &= \frac{1}{2}\left(e^{-i\mu_Ht} - e^{-i\mu_Lt} \right)
+    e_+ &= \frac{1}{2}\left(e^{-i\mu_{\text{H}}t} + e^{-i\mu_{\text{L}}t} \right)\\
+    e_- &= \frac{1}{2}\left(e^{-i\mu_{\text{H}}t} - e^{-i\mu_{\text{L}}t} \right)
 \end{align}
 Writing this in the bra-ket notation gives us:
 \begin{align}
