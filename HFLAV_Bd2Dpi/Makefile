@@ -2,6 +2,7 @@ all:
 	lualatex HFLAV.tex
 	biber HFLAV
 	lualatex HFLAV.tex
+	lualatex HFLAV.tex
 	rm -f *.log *.bak *.aux *.bbl *.blg *.idx *.toc *.out *~ *.synctex.gz *.run.xml *.bcf
 
 clean:
