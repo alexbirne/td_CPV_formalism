@@ -4,7 +4,7 @@ thesis:
   stage: build
   script:
     - cd DecayRates && make
-    - cd HFLAV_Bd2Dpi && make
+    - cd ../HFLAV_Bd2Dpi && make
   cache:
     untracked: true
   artifacts:
